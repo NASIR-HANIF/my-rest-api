@@ -3,7 +3,7 @@ const studentRoute = require("./api/routes/student");
 const facultyRoute = require("./api/routes/faculty");
 const app = express();
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://firstfree101:4kBt45HcjOVaFQmd@firstcluster.tinmtjn.mongodb.net/')
+mongoose.connect('')
 mongoose.connection.on('error',error=>{
     console.log("connection failed ..!")
 });
