@@ -1,9 +1,10 @@
 const express = require("express");
-const studentRoute = require("./api/routes/student");
-const facultyRoute = require("./api/routes/faculty");
+const productRoute = require("./api/routes/productRoute");
+const userRoute = require("./api/routes/userRoute");
+const bodyParser = require("body-parser")
 const app = express();
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://firstfree101:4kBt45HcjOVaFQmd@firstcluster.tinmtjn.mongodb.net/')
+mongoose.connect('mongodb+srv://iamnasir:crT56w0x4Q3XuhNH@nasirfirstcluster.l3hsvl6.mongodb.net/')
 mongoose.connection.on('error',error=>{
     console.log("connection failed ..!")
 });
@@ -12,8 +13,11 @@ mongoose.connection.on('connected',connected=>{
     console.log("connection success")
 })
 
-app.use("/student",studentRoute);
-app.use("/faculty",facultyRoute);
+app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json());
+
+app.use("/product",productRoute);
+app.use("/user",userRoute);
 
 
 app.use((req,res,next)=>{
