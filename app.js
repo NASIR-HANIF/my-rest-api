@@ -4,8 +4,12 @@ const userRoute = require("./api/routes/userRoute");
 const bodyParser = require("body-parser")
 const app = express();
 const mongoose = require("mongoose");
+<<<<<<< HEAD
 const fileUplode = require("express-fileupload")
 mongoose.connect('mongodb+srv://iamnasir:crT56w0x4Q3XuhNH@nasirfirstcluster.l3hsvl6.mongodb.net/')
+=======
+mongoose.connect('')
+>>>>>>> d6f36bfba3f5dbe09c273e942ac7bad2c6e61703
 mongoose.connection.on('error',error=>{
     console.log("connection failed ..!")
 });
